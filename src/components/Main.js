@@ -11,7 +11,7 @@ let imageDatas = require('../data/imageDatas.json');
 imageDatas = (function genImageURL(imageDatasArr) {
     for (var i = 0; i < imageDatasArr.length; i++) {
         var singleImageData = imageDatasArr[i];
-
+				//修改为相对路径
         singleImageData.imageURL ='.'+ require('../images/' + singleImageData.fileName);
 
         imageDatasArr[i] = singleImageData;
@@ -325,8 +325,7 @@ var GalleryByReactApp = React.createClass({
                                 />);
                             }.bind(this));
 
-                        return ( <section className = "stage"
-                            ref = "stage" >
+                        return ( <section className = "stage" ref = "stage" >
                             <section className = "img-sec" > { imgFigures } 
 														</section>
 														<nav className = "controller-nav" > { controllerUnits } 
